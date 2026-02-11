@@ -1,28 +1,39 @@
+
 /**
- * ContaTerminal - Aplicação de Terminal Bancário
+ * Classe ContaTerminal
  * 
- * Criado por @ThalesDev
+ * Esta classe representa um programa de terminal para criação de uma conta bancária.
+ * O usuário é solicitado a informar o número da conta, agência, nome do cliente e saldo inicial.
+ * Após o preenchimento, uma mensagem de confirmação é exibida com os dados informados.
  * 
- * Classe responsável por gerenciar a criação e configuração inicial de uma conta bancária
- * através de uma interface gráfica (JOptionPane).
- * 
- * A aplicação solicita ao usuário as seguintes informações:
- * - Número da conta
- * - Número da agência
- * - Nome do cliente
- * - Saldo inicial da conta
- * 
- * Após coletar todas as informações, exibe uma mensagem de confirmação com os dados cadastrados.
- * 
+ * Utiliza a classe Scanner para entrada de dados via console.
+ *
  * @author ThalesDev
- * @version 1.0
  * @since 2025
  */
 
+
+import java.util.Scanner;
+
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-         System.out.println("Hello, World!");
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Digite o número da conta:");
+        int numeroConta = sc.nextInt();
+
+        System.out.println("Digite o número da agência:");
+        String agencia = sc.next();
+
+        System.out.println("Digite o nome do cliente:");
+        String nomeCliente = sc.next();
+
+        System.out.println("Digite o saldo inicial da conta:");
+        double saldo = sc.nextDouble();
+
+        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco. Sua agência é "
+                + agencia
+                + ", conta " + numeroConta + " e seu saldo é R$ " + saldo + ",  já está disponível para saque.");
 
     }
 }
